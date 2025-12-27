@@ -1,0 +1,4 @@
+depolyement:
+  imageRepo: azharmd
+  imageVersion: v1 
+  component: catalogue
