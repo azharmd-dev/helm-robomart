@@ -1,0 +1,5 @@
+deployment:
+  imageRepo: azharmd
+  component: mongodb
+  imageVersion: v1
+  
