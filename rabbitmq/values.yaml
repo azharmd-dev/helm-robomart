@@ -1,0 +1,4 @@
+deployment:
+  imageRepo: azharmd
+  component: rabbitmq
+  imageVersion: v1
