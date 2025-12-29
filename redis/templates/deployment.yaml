@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment 
+metadata:
+  name: redis 
+  namespace: robomart
+  labels:
+    project: {{ .Values.deployment.project }}
+    component: {{.Values.deployment.component }}
+    tier: db
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      project: {{ .Values.deployment.project }}
+      component: {{.Values.deployment.component }}
+      tier: db
+  template:
+    metadata:
+      labels:
+        project: {{ .Values.deployment.project }}
+        component: {{.Values.deployment.component }}
+        tier: db
+    spec:
+      containers:
+      - name: redis
+        image: {{ .Values.depolyment.imageRepo }}/{{ .Values.deployment.component }}:{{ .Values.deployment.imageVersion }}
+        imagePullPolicy: Always
+        readinessProbe:
+          tcpSocket:
+            port: 6379
+          initialDelaySeconds: 30
+          periodSeconds: 10
+        livenessProbe:
+          tcpSocket:
+            port: 6379
+          initialDelaySeconds: 40
+          periodSeconds: 10

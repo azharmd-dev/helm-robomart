@@ -1,0 +1,5 @@
+deployment:
+  imageRepo: azharmd
+  component: redis
+  imageVersion: v1
+  project: robomart
