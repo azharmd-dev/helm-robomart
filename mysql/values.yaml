@@ -1,0 +1,4 @@
+deployment:
+  imageRepo: azharmd
+  component: mysql
+  imageVersion: v1
