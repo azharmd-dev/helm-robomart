@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: frontend
+  namespace: robomart
+spec:
+  type: LoadBalancer
+  selector:
+    project: {{ .Values.deployment.project }}
+    component: {{ .Values.deployment.component }}
+    tier: frontend
+  ports:
+    - protocol: TCP
+      port: 80 # service port
+      targetPort: 8080 # container port
