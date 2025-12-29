@@ -1,0 +1,5 @@
+deployment:
+  imageRepo: azharmd
+  component: shipping
+  imageVersion: v1
+  project: robomart
